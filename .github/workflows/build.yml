@@ -40,7 +40,7 @@ jobs:
           git config --global user.email "beer5214@126.com"
           git config --global user.name "beer"
           
-          mv -f public docs
+          rm -rf ./docs && mv -f public docs
           git add docs
           git commit -m 'auto build'
           git push
