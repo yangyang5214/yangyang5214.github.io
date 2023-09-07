@@ -1,87 +1,138 @@
-(function ($) {
-  console.log('© Theme-Vexo | https://github.com/yanm1ng/hexo-theme-vexo')
-  var app = $('.app-body')
-  var header = $('.header')
-  var banner = document.getElementById('article-banner') || false
-  var about = document.getElementById('about-banner') || false
-  var top = $('.scroll-top')
-  var catalog = $('.catalog-container .toc-main')
-  var isOpen = false
+(function($){
+  // Search
+  var $searchWrap = $('#search-form-wrap'),
+    isSearchAnim = false,
+    searchAnimDuration = 200;
 
-  $(document).ready(function () {
-    NProgress.start()
-    $('#nprogress .bar').css({
-      'background': '#42b983'
-    })
-    $('#nprogress .spinner').hide()
+  var startSearchAnim = function(){
+    isSearchAnim = true;
+  };
 
-    var fade = {
-      transform: 'translateY(0)',
-      opacity: 1
-    }
-    if (banner) {
-      app.css('transition-delay', '0.15s')
-      $('#article-banner').children().css(fade)
-    }
-    if (about) {
-      $('.author').children().css(fade)
-    }
-    app.css(fade)
-  })
+  var stopSearchAnim = function(callback){
+    setTimeout(function(){
+      isSearchAnim = false;
+      callback && callback();
+    }, searchAnimDuration);
+  };
 
-  window.onload = function () {
-    setTimeout(function () {
-      NProgress.done()
-    }, 200)
+  $('.nav-search-btn').on('click', function(){
+    if (isSearchAnim) return;
+
+    startSearchAnim();
+    $searchWrap.addClass('on');
+    stopSearchAnim(function(){
+      $('.search-form-input').focus();
+    });
+  });
+
+  $('.search-form-input').on('blur', function(){
+    startSearchAnim();
+    $searchWrap.removeClass('on');
+    stopSearchAnim();
+  });
+
+  // Share
+  $('body').on('click', function(){
+    $('.article-share-box.on').removeClass('on');
+  }).on('click', '.article-share-link', function(e){
+    e.stopPropagation();
+
+    var $this = $(this),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      id = 'article-share-box-' + $this.attr('data-id'),
+      title = $this.attr('data-title'),
+      offset = $this.offset();
+
+    if ($('#' + id).length){
+      var box = $('#' + id);
+
+      if (box.hasClass('on')){
+        box.removeClass('on');
+        return;
+      }
+    } else {
+      var html = [
+        '<div id="' + id + '" class="article-share-box">',
+          '<input class="article-share-input" value="' + url + '">',
+          '<div class="article-share-links">',
+            '<a href="https://twitter.com/intent/tweet?text=' + encodeURIComponent(title) + '&url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"><span class="fa fa-twitter"></span></a>',
+            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"><span class="fa fa-facebook"></span></a>',
+            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"><span class="fa fa-pinterest"></span></a>',
+            '<a href="https://www.linkedin.com/shareArticle?mini=true&url=' + encodedUrl + '" class="article-share-linkedin" target="_blank" title="LinkedIn"><span class="fa fa-linkedin"></span></a>',
+          '</div>',
+        '</div>'
+      ].join('');
+
+      var box = $(html);
+
+      $('body').append(box);
+    }
+
+    $('.article-share-box.on').hide();
+
+    box.css({
+      top: offset.top + 25,
+      left: offset.left
+    }).addClass('on');
+  }).on('click', '.article-share-box', function(e){
+    e.stopPropagation();
+  }).on('click', '.article-share-box-input', function(){
+    $(this).select();
+  }).on('click', '.article-share-box-link', function(e){
+    e.preventDefault();
+    e.stopPropagation();
+
+    window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+  });
+
+  // Caption
+  $('.article-entry').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox') || $(this).parent().is('a')) return;
+
+      var alt = this.alt;
+
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+
+      $(this).wrap('<a href="' + this.src + '" data-fancybox=\"gallery\" data-caption="' + alt + '"></a>')
+    });
+
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+
+  if ($.fancybox){
+    $('.fancybox').fancybox();
   }
 
-  $('.menu').on('click', function () {
-    if (!header.hasClass('fixed-header') || isOpen) {
-      header.toggleClass('fixed-header')
-      isOpen = !isOpen
-    }
-    $('.menu-mask').toggleClass('open')
-  })
+  // Mobile nav
+  var $container = $('#container'),
+    isMobileNavAnim = false,
+    mobileNavAnimDuration = 200;
 
-  $('#tag-cloud a').on('click', function () {
-    var list = $('.tag-list')
-    var name = $(this).data('name')
-    var maoH = list.find('#' + name).offset().top
+  var startMobileNavAnim = function(){
+    isMobileNavAnim = true;
+  };
 
-    $('html,body').animate({ scrollTop: maoH - header.height() }, 500)
-  })
+  var stopMobileNavAnim = function(){
+    setTimeout(function(){
+      isMobileNavAnim = false;
+    }, mobileNavAnimDuration);
+  }
 
-  $('.reward-btn').on('click', function () {
-    $('.money-code').fadeToggle()
-  })
+  $('#main-nav-toggle').on('click', function(){
+    if (isMobileNavAnim) return;
 
-  $('.arrow-down').on('click', function () {
-    $('html, body').animate({ scrollTop: banner.offsetHeight - header.height() }, 500)
-  })
+    startMobileNavAnim();
+    $container.toggleClass('mobile-nav-on');
+    stopMobileNavAnim();
+  });
 
-  top.on('click', function () {
-    $('html, body').animate({ scrollTop: 0 }, 600)
-  })
+  $('#wrap').on('click', function(){
+    if (isMobileNavAnim || !$container.hasClass('mobile-nav-on')) return;
 
-  document.addEventListener('scroll', function () {
-    var scrollTop = document.documentElement.scrollTop || document.body.scrollTop
-    var headerH = header.height()
-    if (banner) {
-      if (scrollTop > headerH) {
-        header.addClass('fixed-header')
-      } else if (scrollTop === 0) {
-        header.removeClass('fixed-header')
-      }
-    }
-    if (scrollTop > 100) {
-      top.addClass('opacity')
-    } else {
-      top.removeClass('opacity')
-    }
-    if (scrollTop > 190) {
-      catalog.addClass('fixed-toc')
-    } else {
-      catalog.removeClass('fixed-toc')
-    }
-  })
-})(jQuery)
+    $container.removeClass('mobile-nav-on');
+  });
+})(jQuery);
