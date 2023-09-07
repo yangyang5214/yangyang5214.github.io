@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  sync:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -30,6 +30,7 @@ jobs:
 
       - name: build
         run: |
+          rm -rf ./source/_posts && mkdir -p ./source/_posts
           cp -r leetcode/* ./source/_posts/
           npm run build
 
