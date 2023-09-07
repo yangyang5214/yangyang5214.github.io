@@ -5,7 +5,7 @@
 # Site
 title: beer
 subtitle: ''
-description: ''
+description: '熬过令人沮丧的日子。'
 keywords:
 author: beer
 language: en
@@ -98,7 +98,8 @@ ignore:
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 #theme: landscape
-theme: vexo
+#theme: vexo
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
