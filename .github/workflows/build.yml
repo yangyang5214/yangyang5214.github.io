@@ -18,6 +18,16 @@ jobs:
           ref: main
           token: ${{ secrets.TOKEN }}
 
+      - name: Check commit message
+        run: |
+          last_commit_message=$(git log -1 --pretty=%B)
+          if [[ "$last_commit_message" == 'auto build by github workflow' ]]; then
+            echo "Commit message is 'auto build', continuing with the workflow."
+          else
+            echo "Commit message is not 'auto build by github workflow', skipping the workflow."
+            exit 0  # Exit successfully to skip the workflow
+          fi
+
       - name: Use Node.js 12.x
         uses: actions/setup-node@v3
         with:
