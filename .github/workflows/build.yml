@@ -36,6 +36,9 @@ jobs:
 
       - name: commit
         run: |
+          git config --global user.email "beer5214@126.com"
+          git config --global user.name "beer"
+          
           git add public
           git commit -m 'auto build'
           git push
