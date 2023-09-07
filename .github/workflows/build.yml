@@ -17,8 +17,6 @@ jobs:
         with:
           ref: main
           token: ${{ secrets.TOKEN }}
-        run: |
-          git pull
 
       - name: Check commit message
         run: |
