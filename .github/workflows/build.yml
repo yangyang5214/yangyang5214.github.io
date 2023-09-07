@@ -1,0 +1,43 @@
+name: build && deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Current Repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: '12.x'
+      - name: Cache NPM dependencies
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: ${{ runner.OS }}-npm-cache
+          restore-keys: |
+            ${{ runner.OS }}-npm-cache
+      - run: npm install
+
+      - name: build
+        run: |
+          cp -r leetcode/* ./source/_posts/
+          npm run build
+
+      - name: commit
+        run: |
+          git add public
+          git commit -m 'auto build'
+          git push
+        
+
+
