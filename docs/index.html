@@ -181,7 +181,7 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2023-09-08 13:08:49" itemprop="dateCreated datePublished" datetime="2023-09-08T13:08:49+00:00">2023-09-08</time>
+              <time title="Created: 2023-09-08 13:23:24" itemprop="dateCreated datePublished" datetime="2023-09-08T13:23:24+00:00">2023-09-08</time>
             </span>
 
           
@@ -239,7 +239,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2023-09-08 11:26:11 / Modified: 13:08:49" itemprop="dateCreated datePublished" datetime="2023-09-08T11:26:11+00:00">2023-09-08</time>
+              <time title="Created: 2023-09-08 11:26:11 / Modified: 13:23:24" itemprop="dateCreated datePublished" datetime="2023-09-08T11:26:11+00:00">2023-09-08</time>
             </span>
 
           
@@ -262,65 +262,6 @@
 <p>使用一个临时数组，存储已经遍历的元素，按照情况取最后一个或者最后两个的平均数就是结果值</p>
 </blockquote>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">func findMedianSortedArrays(nums1 []int, nums2 []int) float64 &#123;</span><br><span class="line">	length := len(nums1) + len(nums2)</span><br><span class="line">	findIndex := length / 2</span><br><span class="line"></span><br><span class="line">	var left, right int</span><br><span class="line">	var tempList []int //存储已经遍历的数组 最后取 tempList[-1] 个或者最后 avg(tempList[-1],tempList[-2])</span><br><span class="line"></span><br><span class="line">	if len(nums1) == 0 &#123;</span><br><span class="line">		tempList = nums2</span><br><span class="line">	&#125; else if len(nums2) == 0 &#123;</span><br><span class="line">		tempList = nums1</span><br><span class="line">	&#125; else &#123;</span><br><span class="line">		for len(tempList) &lt; findIndex+1 &#123; //这里多存储一个</span><br><span class="line">			if len(nums1) == left &#123;</span><br><span class="line">				tempList = append(tempList, nums2[right])</span><br><span class="line">				right = right + 1</span><br><span class="line">			&#125; else if len(nums2) == right &#123;</span><br><span class="line">				tempList = append(tempList, nums1[left])</span><br><span class="line">				left = left + 1</span><br><span class="line">			&#125; else &#123;</span><br><span class="line">				if nums1[left] &lt;= nums2[right] &#123;</span><br><span class="line">					tempList = append(tempList, nums1[left])</span><br><span class="line">					left = left + 1</span><br><span class="line">				&#125; else &#123;</span><br><span class="line">					tempList = append(tempList, nums2[right])</span><br><span class="line">					right = right + 1</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	if length%2 == 0 &#123;</span><br><span class="line">		return float64(tempList[findIndex]+tempList[findIndex-1]) / 2</span><br><span class="line">	&#125; else &#123;</span><br><span class="line">		return float64(tempList[findIndex])</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/09/08/blog/test/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/23392325?&v=4">
-      <meta itemprop="name" content="beer">
-      <meta itemprop="description" content="熬过令人沮丧的日子。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="beer">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/09/08/blog/test/" class="post-title-link" itemprop="url">test</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2023-09-08 09:37:58 / Modified: 12:57:16" itemprop="dateCreated datePublished" datetime="2023-09-08T09:37:58+00:00">2023-09-08</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>1111</p>
-
       
     </div>
 
@@ -370,7 +311,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-09-08 13:08:49" itemprop="dateModified" datetime="2023-09-08T13:08:49+00:00">2023-09-08</time>
+                <time title="Modified: 2023-09-08 13:23:24" itemprop="dateModified" datetime="2023-09-08T13:23:24+00:00">2023-09-08</time>
               </span>
 
           
@@ -437,7 +378,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-09-08 13:08:49" itemprop="dateModified" datetime="2023-09-08T13:08:49+00:00">2023-09-08</time>
+                <time title="Modified: 2023-09-08 13:23:24" itemprop="dateModified" datetime="2023-09-08T13:23:24+00:00">2023-09-08</time>
               </span>
 
           
@@ -510,7 +451,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-09-08 13:08:49" itemprop="dateModified" datetime="2023-09-08T13:08:49+00:00">2023-09-08</time>
+                <time title="Modified: 2023-09-08 13:23:24" itemprop="dateModified" datetime="2023-09-08T13:23:24+00:00">2023-09-08</time>
               </span>
 
           
@@ -622,7 +563,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
