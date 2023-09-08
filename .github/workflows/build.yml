@@ -36,7 +36,7 @@ jobs:
           cp -r leetcode ./source/_posts/
           
           rm -rf ./docs
-          rm ./db.json
+          rm -f ./db.json
           
           npm run build
 
