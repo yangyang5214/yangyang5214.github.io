@@ -34,6 +34,7 @@ jobs:
         run: |
           rm -rf ./source/_posts && mkdir -p ./source/_posts
           cp -r leetcode ./source/_posts/
+          rm -rf ./docs
           npm run build
 
       - name: commit
@@ -41,7 +42,7 @@ jobs:
           git config --global user.email "beer5214@126.com"
           git config --global user.name "beer"
           
-          rm -rf ./docs && mv -f public docs
+          mv -f public docs
           git add .
           git commit -m 'auto build'
           git push
