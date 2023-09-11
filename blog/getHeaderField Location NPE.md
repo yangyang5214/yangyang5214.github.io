@@ -2,7 +2,7 @@
 title: getHeaderField Location NPE
 date: 
 tags:
--  
+- 杂 
 ---
 
 Caused by: java.lang.NullPointerException: getHeaderField("Location") must not be null
