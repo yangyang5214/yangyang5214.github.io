@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -ex
-
 function process() {
     source_dir=$1
     cd $source_dir
@@ -18,7 +16,8 @@ function process() {
     do
         original_file=$file
         file_name=`echo ${original_file#*/}`
-        pngquant $file_name --skip-if-larger --quality 50 --verbose --speed 11 --force -o $des_dir"/"$file_name
+        echo "start process "$file_name
+        pngquant $file_name --skip-if-larger --quality 50 --force -o $des_dir"/"$file_name
     done
 
     echo "--- start compress jpg ---"
