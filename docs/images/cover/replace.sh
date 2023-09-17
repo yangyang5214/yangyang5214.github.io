@@ -17,7 +17,7 @@ function process() {
         original_file=$file
         file_name=`echo ${original_file#*/}`
         echo "start process "$file_name
-        pngquant $file_name --skip-if-larger --quality 50 --force -o $des_dir"/"$file_name
+        pngquant $file_name --skip-if-larger --quality 50 --speed 10 --force -o $des_dir"/"$file_name
     done
 
     echo "--- start compress jpg ---"
