@@ -157,6 +157,65 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/blog/protobuf_Timestamp_to_local%20_time/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/23392325?&v=4">
+      <meta itemprop="name" content="beer">
+      <meta itemprop="description" content="熬过令人沮丧的日子。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="beer">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/blog/protobuf_Timestamp_to_local%20_time/" class="post-title-link" itemprop="url">protobuf_Timestamp_to_local _time</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-10-26 19:51:10 / Modified: 19:53:43" itemprop="dateCreated datePublished" datetime="2023-10-26T19:51:10+08:00">2023-10-26</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <span id="more"></span>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">func GetLocalTime(t *timestamppb.Timestamp) time.Time &#123;</span><br><span class="line">	if t != nil &#123;</span><br><span class="line">		return time.Unix(t.GetSeconds(), int64(t.GetNanos())).Local()</span><br><span class="line">	&#125;</span><br><span class="line">	return time.Time&#123;&#125;.Local()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/blog/uiautomator2%E4%BD%BF%E7%94%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -180,10 +239,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2023-10-22 11:20:59 / Modified: 11:22:45" itemprop="dateCreated datePublished" datetime="2023-10-22T11:20:59+08:00">2023-10-22</time>
+              <time title="Created: 2023-10-22 11:20:59" itemprop="dateCreated datePublished" datetime="2023-10-22T11:20:59+08:00">2023-10-22</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-10-26 19:53:43" itemprop="dateModified" datetime="2023-10-26T19:53:43+08:00">2023-10-26</time>
+              </span>
 
           
 
@@ -257,7 +322,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-10-22 11:22:45" itemprop="dateModified" datetime="2023-10-22T11:22:45+08:00">2023-10-22</time>
+                <time title="Modified: 2023-10-26 19:53:43" itemprop="dateModified" datetime="2023-10-26T19:53:43+08:00">2023-10-26</time>
               </span>
 
           
@@ -332,7 +397,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-10-22 11:22:45" itemprop="dateModified" datetime="2023-10-22T11:22:45+08:00">2023-10-22</time>
+                <time title="Modified: 2023-10-26 19:53:43" itemprop="dateModified" datetime="2023-10-26T19:53:43+08:00">2023-10-26</time>
               </span>
 
           
@@ -408,7 +473,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-10-22 11:22:45" itemprop="dateModified" datetime="2023-10-22T11:22:45+08:00">2023-10-22</time>
+                <time title="Modified: 2023-10-26 19:53:43" itemprop="dateModified" datetime="2023-10-26T19:53:43+08:00">2023-10-26</time>
               </span>
 
           
@@ -487,7 +552,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-10-22 11:22:45" itemprop="dateModified" datetime="2023-10-22T11:22:45+08:00">2023-10-22</time>
+                <time title="Modified: 2023-10-26 19:53:43" itemprop="dateModified" datetime="2023-10-26T19:53:43+08:00">2023-10-26</time>
               </span>
 
           
@@ -567,7 +632,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-10-22 11:22:45" itemprop="dateModified" datetime="2023-10-22T11:22:45+08:00">2023-10-22</time>
+                <time title="Modified: 2023-10-26 19:53:43" itemprop="dateModified" datetime="2023-10-26T19:53:43+08:00">2023-10-26</time>
               </span>
 
           
@@ -646,7 +711,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-10-22 11:22:45" itemprop="dateModified" datetime="2023-10-22T11:22:45+08:00">2023-10-22</time>
+                <time title="Modified: 2023-10-26 19:53:43" itemprop="dateModified" datetime="2023-10-26T19:53:43+08:00">2023-10-26</time>
               </span>
 
           
@@ -725,7 +790,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-10-22 11:22:45" itemprop="dateModified" datetime="2023-10-22T11:22:45+08:00">2023-10-22</time>
+                <time title="Modified: 2023-10-26 19:53:43" itemprop="dateModified" datetime="2023-10-26T19:53:43+08:00">2023-10-26</time>
               </span>
 
           
@@ -803,7 +868,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-10-22 11:22:45" itemprop="dateModified" datetime="2023-10-22T11:22:45+08:00">2023-10-22</time>
+                <time title="Modified: 2023-10-26 19:53:43" itemprop="dateModified" datetime="2023-10-26T19:53:43+08:00">2023-10-26</time>
               </span>
 
           
@@ -828,85 +893,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/blog/%E6%B3%B0%E5%B1%B1/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/blog/%E6%B5%B7%E5%8D%97%E7%8E%AF%E5%B2%9B%E9%AA%91%E8%A1%8C/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/23392325?&v=4">
-      <meta itemprop="name" content="beer">
-      <meta itemprop="description" content="熬过令人沮丧的日子。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="beer">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/blog/%E6%B5%B7%E5%8D%97%E7%8E%AF%E5%B2%9B%E9%AA%91%E8%A1%8C/" class="post-title-link" itemprop="url">海南环岛骑行</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2023-09-23 13:25:41" itemprop="dateCreated datePublished" datetime="2023-09-23T13:25:41+08:00">2023-09-23</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-10-22 11:22:45" itemprop="dateModified" datetime="2023-10-22T11:22:45+08:00">2023-10-22</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <blockquote>
-<p>海南环岛骑行。2023 3月初，九天小旅程。</p>
-</blockquote>
-<p><img src="/../images/c889819f96f40548d782a2dca43c5c4e.jpeg"></p>
-<ul>
-<li>517 驿站</li>
-</ul>
-<p>租车很顺利的，直接去选车，交钱就可以直接走了。（PS：仅仅也只是租车的，其他驿站也可以）</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/blog/%E6%B5%B7%E5%8D%97%E7%8E%AF%E5%B2%9B%E9%AA%91%E8%A1%8C/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -997,7 +983,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">36</span>
+          <span class="site-state-item-count">37</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
