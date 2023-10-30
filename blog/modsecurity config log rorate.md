@@ -1,6 +1,6 @@
 ---
-title: modsecurity_config_log_rorate
-date: 2023-10-17 21:00:01
+title: modsecurity config log rorate
+date: 2023-10-30 21:16:16
 tags:
 - 杂 
 ---
