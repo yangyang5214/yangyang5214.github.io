@@ -1,6 +1,6 @@
 ---
-title: uiautomator2使用
-date: 2023-10-22 11:20:59
+title: uiautomator2 使用
+date: 2023-10-30 21:16:16
 tags:
 - 杂 
 ---
