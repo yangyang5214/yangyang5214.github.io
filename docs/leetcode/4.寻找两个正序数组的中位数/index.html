@@ -5,25 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 6.3.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/yangyang5214.github.io/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/yangyang5214.github.io/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/yangyang5214.github.io/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/yangyang5214.github.io/images/logo.svg" color="#222">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-<link rel="stylesheet" href="/yangyang5214.github.io/css/main.css">
+<link rel="stylesheet" href="/css/main.css">
 
 
-<link rel="stylesheet" href="/yangyang5214.github.io/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yangyang5214.github.io","root":"/yangyang5214.github.io/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"yangyang5214.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
   <meta name="description" content="寻找两个正序数组的中位数.md   解 1 使用一个临时数组，存储已经遍历的元素，按照情况取最后一个或者最后两个的平均数就是结果值">
 <meta property="og:type" content="article">
 <meta property="og:title" content="4.寻找两个正序数组的中位数">
-<meta property="og:url" content="https://yangyang5214.github.io/yangyang5214.github.io/leetcode/4.%E5%AF%BB%E6%89%BE%E4%B8%A4%E4%B8%AA%E6%AD%A3%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0/index.html">
+<meta property="og:url" content="https://yangyang5214.github.io/leetcode/4.%E5%AF%BB%E6%89%BE%E4%B8%A4%E4%B8%AA%E6%AD%A3%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0/index.html">
 <meta property="og:site_name" content="beer">
 <meta property="og:description" content="寻找两个正序数组的中位数.md   解 1 使用一个临时数组，存储已经遍历的元素，按照情况取最后一个或者最后两个的平均数就是结果值">
 <meta property="og:locale" content="en_US">
@@ -32,13 +32,13 @@
 <meta property="og:image" content="https://yangyang5214.github.io/images/WX20230909-162243@2x.png">
 <meta property="og:image" content="https://yangyang5214.github.io/images/WX20230909-175454@2x.png">
 <meta property="article:published_time" content="2023-09-08T03:26:15.000Z">
-<meta property="article:modified_time" content="2023-10-31T09:01:52.733Z">
+<meta property="article:modified_time" content="2023-10-31T09:16:01.060Z">
 <meta property="article:author" content="beer">
 <meta property="article:tag" content="leetcode">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://yangyang5214.github.io/images/cover/img_1.png">
 
-<link rel="canonical" href="https://yangyang5214.github.io/yangyang5214.github.io/leetcode/4.%E5%AF%BB%E6%89%BE%E4%B8%A4%E4%B8%AA%E6%AD%A3%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0/">
+<link rel="canonical" href="https://yangyang5214.github.io/leetcode/4.%E5%AF%BB%E6%89%BE%E4%B8%A4%E4%B8%AA%E6%AD%A3%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0/">
 
 
 <script id="page-configurations">
@@ -100,7 +100,7 @@
 
   <div class="site-meta">
 
-    <a href="/yangyang5214.github.io/" class="brand" rel="start">
+    <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
       <h1 class="site-title">beer</h1>
       <span class="logo-line-after"><i></i></span>
@@ -120,22 +120,22 @@
   <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/yangyang5214.github.io/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
 
   </li>
         <li class="menu-item menu-item-about">
 
-    <a href="/yangyang5214.github.io/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/yangyang5214.github.io/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/yangyang5214.github.io/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
 
   </li>
   </ul>
@@ -166,7 +166,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://yangyang5214.github.io/yangyang5214.github.io/leetcode/4.%E5%AF%BB%E6%89%BE%E4%B8%A4%E4%B8%AA%E6%AD%A3%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0/">
+    <link itemprop="mainEntityOfPage" href="https://yangyang5214.github.io/leetcode/4.%E5%AF%BB%E6%89%BE%E4%B8%A4%E4%B8%AA%E6%AD%A3%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://avatars.githubusercontent.com/u/23392325?&v=4">
@@ -196,7 +196,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-10-31 17:01:52" itemprop="dateModified" datetime="2023-10-31T17:01:52+08:00">2023-10-31</time>
+                <time title="Modified: 2023-10-31 17:16:01" itemprop="dateModified" datetime="2023-10-31T17:16:01+08:00">2023-10-31</time>
               </span>
 
           
@@ -213,7 +213,7 @@
         <blockquote>
 <p>寻找两个正序数组的中位数.md</p>
 </blockquote>
-<p><img src="/yangyang5214.github.io/../images/cover/img_1.png" alt="img_1.png"></p>
+<p><img src="/../images/cover/img_1.png" alt="img_1.png"></p>
 <h2 id="解-1"><a href="#解-1" class="headerlink" title="解 1"></a>解 1</h2><blockquote>
 <p>使用一个临时数组，存储已经遍历的元素，按照情况取最后一个或者最后两个的平均数就是结果值</p>
 </blockquote>
@@ -227,9 +227,9 @@
 <li>只需要找到中位数即可，不需要将两个数组合并&amp;排序</li>
 <li>按照中位数的定义，把 nums1 &amp; nums2 分为两段，那么结果就是在中间的四个数字里</li>
 </ul>
-<h3 id="确定结束边界"><a href="#确定结束边界" class="headerlink" title="确定结束边界"></a>确定结束边界</h3><p><img src="/yangyang5214.github.io/../images/WX20230909-191923@2x.png"></p>
-<h3 id="推导-i-j"><a href="#推导-i-j" class="headerlink" title="推导 i &amp; j"></a>推导 i &amp; j</h3><p><img src="/yangyang5214.github.io/../images/WX20230909-162243@2x.png"></p>
-<p><img src="/yangyang5214.github.io/../images/WX20230909-175454@2x.png"></p>
+<h3 id="确定结束边界"><a href="#确定结束边界" class="headerlink" title="确定结束边界"></a>确定结束边界</h3><p><img src="/../images/WX20230909-191923@2x.png"></p>
+<h3 id="推导-i-j"><a href="#推导-i-j" class="headerlink" title="推导 i &amp; j"></a>推导 i &amp; j</h3><p><img src="/../images/WX20230909-162243@2x.png"></p>
+<p><img src="/../images/WX20230909-175454@2x.png"></p>
 <p>如果不满足当前条件，需要根据情况移动指针，直到满足条件。</p>
 <h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line">func findMedianSortedArrays1(nums1 []int, nums2 []int) float64 &#123;</span><br><span class="line">	m := len(nums1)</span><br><span class="line">	n := len(nums2)</span><br><span class="line"></span><br><span class="line">	if m &gt; n &#123;</span><br><span class="line">		return findMedianSortedArrays1(nums2, nums1)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	var left = 0</span><br><span class="line">	var right = m</span><br><span class="line"></span><br><span class="line">	var i, j int</span><br><span class="line">	for left &lt;= right &#123;</span><br><span class="line">		i = (left + right) / 2</span><br><span class="line">		j = (m+n+1)/2 - i //由 i + j =( m + n + 1 ) / 2 演化</span><br><span class="line"></span><br><span class="line">		//i != m &amp;&amp; j != 0 保证数组不越界</span><br><span class="line">		if i != m &amp;&amp; j != 0 &amp;&amp; nums1[i] &lt; nums2[j-1] &#123;</span><br><span class="line">			left = i + 1</span><br><span class="line">		&#125; else if i != 0 &amp;&amp; j != n &amp;&amp; nums1[i-1] &gt; nums2[j] &#123;</span><br><span class="line">			right = i - 1</span><br><span class="line">		&#125; else &#123;</span><br><span class="line">			break</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	var maxLeft int</span><br><span class="line">	if i == 0 &#123;</span><br><span class="line">		maxLeft = nums2[j-1]</span><br><span class="line">	&#125; else if j == 0 &#123;</span><br><span class="line">		maxLeft = nums1[i-1]</span><br><span class="line">	&#125; else &#123;</span><br><span class="line">		maxLeft = max(nums1[i-1], nums2[j-1])</span><br><span class="line">	&#125;</span><br><span class="line">	if (m+n)%2 == 1 &#123; //奇数的情况，返回左边最大的</span><br><span class="line">		return float64(maxLeft)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	var minRight int</span><br><span class="line">	if i == m &#123;</span><br><span class="line">		minRight = nums2[j]</span><br><span class="line">	&#125; else if j == n &#123;</span><br><span class="line">		minRight = nums1[i]</span><br><span class="line">	&#125; else &#123;</span><br><span class="line">		minRight = min(nums1[i], nums2[j])</span><br><span class="line">	&#125;</span><br><span class="line">	return float64(maxLeft+minRight) / 2</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func min(a, b int) int &#123;</span><br><span class="line">	if a &lt; b &#123;</span><br><span class="line">		return a</span><br><span class="line">	&#125;</span><br><span class="line">	return b</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func max(a, b int) int &#123;</span><br><span class="line">	if a &gt; b &#123;</span><br><span class="line">		return a</span><br><span class="line">	&#125;</span><br><span class="line">	return b</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -243,7 +243,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/yangyang5214.github.io/tags/leetcode/" rel="tag"># leetcode</a>
+              <a href="/tags/leetcode/" rel="tag"># leetcode</a>
           </div>
 
         
@@ -252,11 +252,11 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/yangyang5214.github.io/leetcode/3.%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%97%E4%B8%B2/" rel="prev" title="3.无重复字符的最长字串">
+    <a href="/leetcode/3.%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%97%E4%B8%B2/" rel="prev" title="3.无重复字符的最长字串">
       <i class="fa fa-chevron-left"></i> 3.无重复字符的最长字串
     </a></div>
       <div class="post-nav-item">
-    <a href="/yangyang5214.github.io/leetcode/5.%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/" rel="next" title="5.最长回文子串">
+    <a href="/leetcode/5.%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/" rel="next" title="5.最长回文子串">
       5.最长回文子串 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
@@ -331,14 +331,14 @@
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
-          <a href="/yangyang5214.github.io/archives/">
+          <a href="/archives/">
         
           <span class="site-state-item-count">25</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-            <a href="/yangyang5214.github.io/tags/">
+            <a href="/tags/">
           
         <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">tags</span></a>
@@ -390,19 +390,19 @@
   </div>
 
   
-  <script src="/yangyang5214.github.io/lib/anime.min.js"></script>
-  <script src="/yangyang5214.github.io/lib/velocity/velocity.min.js"></script>
-  <script src="/yangyang5214.github.io/lib/velocity/velocity.ui.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
 
-<script src="/yangyang5214.github.io/js/utils.js"></script>
+<script src="/js/utils.js"></script>
 
-<script src="/yangyang5214.github.io/js/motion.js"></script>
-
-
-<script src="/yangyang5214.github.io/js/schemes/pisces.js"></script>
+<script src="/js/motion.js"></script>
 
 
-<script src="/yangyang5214.github.io/js/next-boot.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
 
 
 
